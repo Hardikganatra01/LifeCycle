@@ -7,6 +7,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -60,6 +62,30 @@ public class A extends AppCompatActivity {
         CharSequence value=savedInstanceState.getCharSequence("key");
         textView.setText(value);
     }*/
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean handled = false;
+        int id=item.getItemId();
+        switch (id){
+            case R.id.action_activity:
+                launchActivityB();
+                break;
+        }
+        return handled;
+    }
+
+    private void launchActivityB() {
+        Intent intent=new Intent(this,B.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onResume() {
