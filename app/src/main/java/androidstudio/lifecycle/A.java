@@ -78,8 +78,22 @@ public class A extends AppCompatActivity {
             case R.id.action_activity:
                 launchActivityB();
                 break;
+            case R.id.action_alert_dialog:
+                launchDialogAlert();
+                break;
+            case R.id.action_dialog_fragment:
+                launchDialogFragment();
+                break;
+            case R.id.action_fragment_lifecycle:
+                launchActivityD();
+                break;
         }
         return handled;
+    }
+
+    private void launchActivityD() {
+        Intent intent=new Intent(this,D.class);
+        startActivity(intent);
     }
 
     private void launchActivityB() {
@@ -111,9 +125,9 @@ public class A extends AppCompatActivity {
         Log.d(TAG, "onDestroy: ");
     }
 
-    public void launchAlertDialog(View view) {
+    public void launchDialogAlert() {
         new AlertDialog.Builder(this)
-                .setMessage("hello from AlertDialog")
+                .setMessage(R.string.hello_c)
                 .show();
     }
 
@@ -152,7 +166,7 @@ public class A extends AppCompatActivity {
     public void launchDialog(View view) {
         /*Intent intent=new Intent(this,C.class);
         startActivity(intent);*/
-        /*launchAlertDialog(view);*/
+       /* launchDialogAlert(view);*/
         launchDialogFragment();
     }
 }

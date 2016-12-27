@@ -10,4 +10,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="androidstudio.lifecycle.D">
 
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_vertical_margin"
+        android:text="@string/message_activity" />
+
+    <fragment
+        android:id="@+id/demo_fragment"
+        class="androidstudio.lifecycle.DemoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/tv_message" />
+
 </RelativeLayout>
